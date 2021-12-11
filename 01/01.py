@@ -1,8 +1,11 @@
 #! /usr/bin/env python3
 
-from sys import stdin
+import sys
 
-vals = [int(val) for val in stdin.readlines()]
+file = sys.argv[1]
+
+with open(file, 'r') as fp:
+    vals = [int(val) for val in fp.read().splitlines()]
 
 
 def part1():

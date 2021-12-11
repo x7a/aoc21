@@ -1,9 +1,12 @@
 #! /usr/bin/env python3
 
-from sys import stdin
+import sys
 from collections import Counter
 
-vals = [val.strip() for val in stdin.readlines()]
+file = sys.argv[1]
+
+with open(file, 'r') as fp:
+    vals = [val for val in fp.read().splitlines()]
 
 
 def bit_counts(arr):

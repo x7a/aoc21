@@ -1,9 +1,13 @@
 #! /usr/bin/env python3
 
-from sys import stdin
+import sys
 
-lines = stdin.readlines()
-cmds = [(val[0], int(val[1])) for val in [cmd.split() for cmd in lines]]
+file = sys.argv[1]
+
+with open(file, 'r') as fp:
+    raw = fp.read().splitlines()
+
+cmds = [(val[0], int(val[1])) for val in [cmd.split() for cmd in raw]]
 
 
 def part1():

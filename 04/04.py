@@ -1,13 +1,16 @@
 #! /usr/bin/env python3
 
-from sys import stdin
+import sys
 
-lines = [line.strip() for line in stdin.readlines()]
+file = sys.argv[1]
 
-nums = [int(val) for val in lines[0].split(',')]
+with open(file, 'r') as fp:
+    raw = fp.read().splitlines()
+
+nums = [int(val) for val in raw[0].split(',')]
 boards = []
 
-for line in lines[1:]:
+for line in raw[1:]:
     if not line:
         boards.append([])
         continue
